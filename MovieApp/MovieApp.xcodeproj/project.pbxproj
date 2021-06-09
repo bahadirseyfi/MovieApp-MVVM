@@ -14,6 +14,7 @@
 		185338232670FD8F00A7C62F /* TopRatedMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185338212670FD8F00A7C62F /* TopRatedMovieCell.swift */; };
 		185338242670FD8F00A7C62F /* TopRatedMovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185338222670FD8F00A7C62F /* TopRatedMovieCell.xib */; };
 		185338352671596C00A7C62F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 185338342671596C00A7C62F /* SDWebImage */; };
+		18533841267178EF00A7C62F /* NowPlayingMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853383F267178EF00A7C62F /* NowPlayingMovieCell.swift */; };
 		189EFE1826701A9100152FAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EFE1726701A9100152FAF /* AppDelegate.swift */; };
 		189EFE1A26701A9100152FAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EFE1926701A9100152FAF /* SceneDelegate.swift */; };
 		189EFE1C26701A9100152FAF /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EFE1B26701A9100152FAF /* MovieViewController.swift */; };
@@ -53,6 +54,7 @@
 		1853381B2670E7D700A7C62F /* PopularMovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularMovieCell.xib; sourceTree = "<group>"; };
 		185338212670FD8F00A7C62F /* TopRatedMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMovieCell.swift; sourceTree = "<group>"; };
 		185338222670FD8F00A7C62F /* TopRatedMovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopRatedMovieCell.xib; sourceTree = "<group>"; };
+		1853383F267178EF00A7C62F /* NowPlayingMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingMovieCell.swift; sourceTree = "<group>"; };
 		189EFE1426701A9100152FAF /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189EFE1726701A9100152FAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		189EFE1926701A9100152FAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				1853381B2670E7D700A7C62F /* PopularMovieCell.xib */,
 				185338212670FD8F00A7C62F /* TopRatedMovieCell.swift */,
 				185338222670FD8F00A7C62F /* TopRatedMovieCell.xib */,
+				1853383F267178EF00A7C62F /* NowPlayingMovieCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				189EFE1C26701A9100152FAF /* MovieViewController.swift in Sources */,
 				18A059892670218D00D3A0A3 /* MovieEndpoint.swift in Sources */,
 				189EFE1826701A9100152FAF /* AppDelegate.swift in Sources */,
+				18533841267178EF00A7C62F /* NowPlayingMovieCell.swift in Sources */,
 				18A05984267020BB00D3A0A3 /* Movie.swift in Sources */,
 				185338232670FD8F00A7C62F /* TopRatedMovieCell.swift in Sources */,
 				1853381C2670E7D700A7C62F /* PopularMovieCell.swift in Sources */,
