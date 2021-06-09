@@ -1,25 +1,27 @@
 //
-//  TopRatedMovieCell.swift
+//  NowPlayingMovieCell.swift
 //  MovieApp
 //
-//  Created by bahadir on 9.06.2021.
+//  Created by bahadir on 10.06.2021.
 //
 
 import UIKit
 import SDWebImage
 
-final class TopRatedMovieCell: UICollectionViewCell {
+class NowPlayingMovieCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 8
+        imageView.layer.cornerRadius = 15
     }
     
-    func configureCell(name: String, image: String) {
-        nameLabel.text = name
+    func configure(date: String, title: String, image: String) {
+        dateLabel.text = date
+        titleLabel.text = title
         prepareImage(with: image)
     }
     

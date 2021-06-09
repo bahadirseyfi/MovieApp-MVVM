@@ -6,13 +6,24 @@
 //
 
 import UIKit
+import SDWebImage
 
-class PopularMovieCell: UICollectionViewCell {
-
-    @IBOutlet weak var nameLabel: UILabel!
+final class PopularMovieCell: UICollectionViewCell {
+    
+    @IBOutlet private weak var imageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        nameLabel.text = "Yıldız Savaşları"
+        layer.cornerRadius = 15
+    }
+    
+    func configureCell(image: String) {
+        prepareImage(with: image)
+    }
+    
+    private func prepareImage(with urlString: String?) {
+        if let urlMovieString = urlString, let url = URL(string: urlMovieString) {
+            imageView.sd_setImage(with: url)
+        }
     }
 }
