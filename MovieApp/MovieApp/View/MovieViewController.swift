@@ -29,12 +29,18 @@ final class MovieViewController: UIViewController {
         imageView.image = image
         navigationItem.titleView = imageView
     }
+    
+    private func redirectTo(movieID: Int) {
+        self.view.endEditing(true)
+        let vc: DetailViewController = DetailViewController.instantiate(storyboards: .detail)
+        vc.viewModel = DetailViewModel(movieID: movieID)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension MovieViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
         return viewModel.numberOfItems(section) ?? 0
     }
     
@@ -68,6 +74,32 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
         }
         
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == topRatedCollectionView {
+            if let movieID = viewModel.topRatedMovie(indexPath.item)?.movieId {
+                redirectTo(movieID: movieID)
+            } else {
+                print("Başarız ID ")
+            }
+        }
+        
+        if collectionView == popularCollectionView {
+            if let movieID = viewModel.popularMovie(indexPath.item)?.movieId {
+                redirectTo(movieID: movieID)
+            } else {
+                print("Başarız ID ")
+            }
+        }
+
+        if collectionView == nowPlayingCollectionView {
+            if let movieID = viewModel.nowPlayingMovie(indexPath.item)?.movieId {
+                redirectTo(movieID: movieID)
+            } else {
+                print("Başarız ID ")
+            }
+        }
     }
 }
 
