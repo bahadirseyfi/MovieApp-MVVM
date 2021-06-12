@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import API
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -13,10 +15,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let movieViewController = storyboard.instantiateViewController(identifier: "MovieViewController") as! MovieViewController
+        
+        let movieViewModel = MovieViewModel(networkManager: NetworkManager())
+        movieViewController.viewModel = movieViewModel
+        
+        let movieNavigationController = UINavigationController(rootViewController: movieViewController)
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().barStyle = .black
+        UINavigationBar.appearance().isTranslucent = true
+        UINavigationBar.appearance().largeContentTitle = "Movie"
+        movieNavigationController.navigationBar.prefersLargeTitles = true
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [movieNavigationController]
+        
+        let tabItemMovies = UITabBarItem(title: "Movies", image: UIImage(named: "anasayfa-x25"), tag: 0)
+        movieNavigationController.tabBarItem = tabItemMovies
+        
+        UITabBar.appearance().barStyle = .black
+        UITabBar.appearance().isTranslucent = true
+        UITabBar.appearance().tintColor = .white
+        
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
