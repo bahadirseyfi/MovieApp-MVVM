@@ -8,15 +8,15 @@
 import UIKit
 
 extension UIViewController {
-    
     enum Storyboards:String {
         case main = "Main"
         case detail = "Detail"
     }
     
-    static func instantiateViewController(with identifier: String) -> Self {
-        let storyboard = UIStoryboard(name: Storyboards.main.rawValue, bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! Self
-        return viewController
+    class func instantiate<T: UIViewController>(storyboards: Storyboards) -> T {
+
+        let storyboard = UIStoryboard(name: storyboards.rawValue, bundle: nil)
+        let identifier = String(describing: self)
+        return storyboard.instantiateViewController(withIdentifier: identifier) as! T
     }
 }
