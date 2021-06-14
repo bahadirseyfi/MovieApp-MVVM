@@ -17,6 +17,8 @@ It contains Collection Structures with different flows on the homepage.
 ## Screenshoots
 
 ![mov1](https://user-images.githubusercontent.com/57216650/121921644-dc72a000-cd41-11eb-8304-edcc62054fa6.gif)
-
 ![mov2](https://user-images.githubusercontent.com/57216650/121921769-fc09c880-cd41-11eb-8f87-4856d214d512.gif)
+
+## Getting help
+If you have questions, concerns, bug reports, etc, please contact me: bahadirsoftware@gmail.com
 
