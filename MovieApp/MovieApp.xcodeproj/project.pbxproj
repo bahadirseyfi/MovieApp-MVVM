@@ -35,6 +35,9 @@
 		18B3F3492672B7DE00EAD18D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3F3482672B7DE00EAD18D /* DetailViewController.swift */; };
 		18B3F3542672B83500EAD18D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3F3532672B83500EAD18D /* UIViewController+Extension.swift */; };
 		18B3F36E2672BBD100EAD18D /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3F36D2672BBD100EAD18D /* MovieViewModel.swift */; };
+		18BB17D9267634B200E16EC3 /* CastCrewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB17D7267634B200E16EC3 /* CastCrewCell.swift */; };
+		18BB17DA267634B200E16EC3 /* CastCrewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BB17D8267634B200E16EC3 /* CastCrewCell.xib */; };
+		18BB17DF26763A1000E16EC3 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB17DE26763A1000E16EC3 /* Credits.swift */; };
 		18D4A1282673804600682A73 /* NowPlayingMovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D4A1272673804600682A73 /* NowPlayingMovieCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +91,9 @@
 		18B3F3482672B7DE00EAD18D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		18B3F3532672B83500EAD18D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		18B3F36D2672BBD100EAD18D /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		18BB17D7267634B200E16EC3 /* CastCrewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCrewCell.swift; sourceTree = "<group>"; };
+		18BB17D8267634B200E16EC3 /* CastCrewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCrewCell.xib; sourceTree = "<group>"; };
+		18BB17DE26763A1000E16EC3 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		18D4A1272673804600682A73 /* NowPlayingMovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NowPlayingMovieCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +127,7 @@
 		1853380A2670E6BB00A7C62F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				18BB17D3267633F400E16EC3 /* Cast&Crew */,
 				185B19D52673B6B30096A2AF /* NowPlaying */,
 				185B19D42673B6AA0096A2AF /* TopRatedMovie */,
 				185B19D32673B6990096A2AF /* PopularMovie */,
@@ -249,6 +256,7 @@
 				18A0597E267020A500D3A0A3 /* Response.swift */,
 				18A05983267020BB00D3A0A3 /* Movie.swift */,
 				18A059882670218D00D3A0A3 /* MovieEndpoint.swift */,
+				18BB17DE26763A1000E16EC3 /* Credits.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,6 +275,15 @@
 				185B19DD2674C0890096A2AF /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18BB17D3267633F400E16EC3 /* Cast&Crew */ = {
+			isa = PBXGroup;
+			children = (
+				18BB17D7267634B200E16EC3 /* CastCrewCell.swift */,
+				18BB17D8267634B200E16EC3 /* CastCrewCell.xib */,
+			);
+			path = "Cast&Crew";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +401,7 @@
 				189EFE2426701A9200152FAF /* LaunchScreen.storyboard in Resources */,
 				185338242670FD8F00A7C62F /* TopRatedMovieCell.xib in Resources */,
 				189EFE2126701A9200152FAF /* Assets.xcassets in Resources */,
+				18BB17DA267634B200E16EC3 /* CastCrewCell.xib in Resources */,
 				189EFE1F26701A9100152FAF /* Main.storyboard in Resources */,
 				18B3F3442672B7AA00EAD18D /* Detail.storyboard in Resources */,
 			);
@@ -418,6 +436,7 @@
 				189EFE1826701A9100152FAF /* AppDelegate.swift in Sources */,
 				18533841267178EF00A7C62F /* NowPlayingMovieCell.swift in Sources */,
 				18A05984267020BB00D3A0A3 /* Movie.swift in Sources */,
+				18BB17D9267634B200E16EC3 /* CastCrewCell.swift in Sources */,
 				185338232670FD8F00A7C62F /* TopRatedMovieCell.swift in Sources */,
 				1853381C2670E7D700A7C62F /* PopularMovieCell.swift in Sources */,
 				18A0597626701FC700D3A0A3 /* API.swift in Sources */,
@@ -427,6 +446,7 @@
 				18B3F3492672B7DE00EAD18D /* DetailViewController.swift in Sources */,
 				189EFE1A26701A9100152FAF /* SceneDelegate.swift in Sources */,
 				18B3F36E2672BBD100EAD18D /* MovieViewModel.swift in Sources */,
+				18BB17DF26763A1000E16EC3 /* Credits.swift in Sources */,
 				18A0597F267020A500D3A0A3 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

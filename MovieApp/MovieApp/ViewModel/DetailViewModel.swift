@@ -11,6 +11,8 @@ import API
 protocol DetailViewModelProtocol {
     var delegate: DetailViewModelDelegate? { get set }
     func load()
+    var numberOfItem: Int { get }
+    func castCrew(_ indexPath: Int) -> Cast?
     var mainImage: String { get }
     var headerImage: String { get }
     var title: String { get }
@@ -22,6 +24,8 @@ protocol DetailViewModelProtocol {
 
 protocol DetailViewModelDelegate: AnyObject {
     func configureUI()
+    func prepareCollection()
+    func reloadData()
 }
 
 final class DetailViewModel {
@@ -29,6 +33,7 @@ final class DetailViewModel {
     
     private var movieID: Int = 0
     private var movie: Movie?
+    private var castCrew: [Cast] = []
     weak var delegate: DetailViewModelDelegate?
     
     init(movieID: Int) {
@@ -48,15 +53,35 @@ final class DetailViewModel {
             }
         }
     }
+    
+    private func fetchCredits() {
+        networkManager.request(endpoint: .credits(id: movieID), type: Credits.self) { [weak self] (result) in
+            switch result {
+            case .success(let response):
+                self?.castCrew = response.cast ?? []
+                self?.delegate?.reloadData()
+            case .failure(let error):
+                print("Cast Network Error: ",error)
+            }
+        }
+    }
 }
 
 extension DetailViewModel: DetailViewModelProtocol {
+    func castCrew(_ indexPath: Int) -> Cast? {
+        castCrew[indexPath]
+    }
+    
+    var numberOfItem: Int {
+        castCrew.count
+    }
+    
     var overview: String {
         movie?.overview ?? ""
     }
     
     var genres: String {
-        "Drama, Crime, TV Moviess"
+        "Drama, Crime, TV"
     }
     
     var language: String {
@@ -80,7 +105,9 @@ extension DetailViewModel: DetailViewModelProtocol {
     }
     
     func load() {
+        delegate?.prepareCollection()
         fetchMovie()
+        fetchCredits()
     }
 
     var releaseDate: String {

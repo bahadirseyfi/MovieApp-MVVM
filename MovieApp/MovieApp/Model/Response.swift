@@ -10,3 +10,7 @@ import Foundation
 struct MoviesResponse: Codable {
     var results: [Movie]
 }
+
+struct CreditsResponse: Codable {
+    var results: [Cast]
+}

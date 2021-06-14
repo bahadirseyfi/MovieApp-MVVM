@@ -14,6 +14,7 @@ enum MovieEndpoint: Endpoint {
     case topRated
     case popular
     case detail(id: Int)
+    case credits(id: Int)
     
     var baseURL: String { MovieDBBaseAPI.BaseURL }
     
@@ -31,6 +32,8 @@ enum MovieEndpoint: Endpoint {
             return "top_rated"
         case .detail(let id):
             return "\(id)"
+        case .credits(let id):
+            return "\(id)/credits"
         }
     }
     
@@ -40,6 +43,7 @@ enum MovieEndpoint: Endpoint {
             case .popular: return .get
             case .topRated: return .get
             case .detail: return .get
+            case .credits: return .get
         }
     }
 }

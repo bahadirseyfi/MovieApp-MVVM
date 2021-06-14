@@ -25,6 +25,7 @@ struct Movie: MovieProtocol {
     var voteAverage: Double
     var releaseDate: String
     var backDropPath: String
+    var originalLanguage: String
     
     private enum CodingKeys : String, CodingKey {
         case movieId = "id"
@@ -34,6 +35,7 @@ struct Movie: MovieProtocol {
         case voteAverage = "vote_average"
         case backDropPath = "backdrop_path"
         case releaseDate = "release_date"
+        case originalLanguage = "original_language"
     }
 }
 

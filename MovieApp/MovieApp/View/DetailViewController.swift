@@ -16,6 +16,7 @@ final class DetailViewController: UIViewController {
     @IBOutlet private weak var genresLabel: UILabel!
     @IBOutlet private weak var languageLabel: UILabel!
     @IBOutlet private weak var popularityLabel: UILabel!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     var viewModel: DetailViewModelProtocol! {
         didSet {
@@ -58,6 +59,10 @@ final class DetailViewController: UIViewController {
 }
 
 extension DetailViewController: DetailViewModelDelegate {
+    func reloadData() {
+        collectionView.reloadData()
+    }
+    
     func configureUI() {
         prepareImage(with: viewModel.mainImage, image: mainImage)
         prepareImage(with: viewModel.headerImage, image: headerImage)
@@ -66,5 +71,24 @@ extension DetailViewController: DetailViewModelDelegate {
         genresLabel.text = viewModel.genres
         languageLabel.text = viewModel.language
         popularityLabel.text = viewModel.popularity
+    }
+    
+    func prepareCollection() {
+        collectionView.register(cellType: CastCrewCell.self)
+    }
+}
+
+extension DetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.numberOfItem
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeCell(cellType: CastCrewCell.self, indexPath: indexPath)
+        if let cast = viewModel.castCrew(indexPath.item) {
+            let castImage =  MovieDBBaseAPI.BaseImagePath + (cast.profilePath ?? "")
+            cell.configureCell(imageUrl: castImage, name: cast.name ?? "")
+        }
+        return cell
     }
 }
