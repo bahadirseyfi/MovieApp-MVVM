@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181437E626775B2800F8F902 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181437E526775B2800F8F902 /* Detail.swift */; };
+		181437EF2677A91400F8F902 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 181437EE2677A91400F8F902 /* NVActivityIndicatorView */; };
+		181437F52677A96900F8F902 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181437F42677A96900F8F902 /* ProgressView.swift */; };
 		185338112670E75E00A7C62F /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185338102670E75E00A7C62F /* UICollectionView+Extension.swift */; };
 		185338162670E7A900A7C62F /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185338152670E7A900A7C62F /* UICollectionReusableView+Extension.swift */; };
 		1853381C2670E7D700A7C62F /* PopularMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853381A2670E7D700A7C62F /* PopularMovieCell.swift */; };
@@ -59,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181437E526775B2800F8F902 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		181437F42677A96900F8F902 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		185338102670E75E00A7C62F /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		185338152670E7A900A7C62F /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
 		1853381A2670E7D700A7C62F /* PopularMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieCell.swift; sourceTree = "<group>"; };
@@ -104,6 +109,7 @@
 			files = (
 				185338352671596C00A7C62F /* SDWebImage in Frameworks */,
 				18A0598F267021FE00D3A0A3 /* API in Frameworks */,
+				181437EF2677A91400F8F902 /* NVActivityIndicatorView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +130,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181437F32677A95900F8F902 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				181437F42677A96900F8F902 /* ProgressView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		1853380A2670E6BB00A7C62F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +228,7 @@
 				1853380E2670E74000A7C62F /* Extensions */,
 				1853380A2670E6BB00A7C62F /* Cell */,
 				18A0597426701F7900D3A0A3 /* Constants */,
+				181437F32677A95900F8F902 /* Utils */,
 				189EFE1726701A9100152FAF /* AppDelegate.swift */,
 				189EFE1926701A9100152FAF /* SceneDelegate.swift */,
 				189EFE2026701A9200152FAF /* Assets.xcassets */,
@@ -257,6 +272,7 @@
 				18A05983267020BB00D3A0A3 /* Movie.swift */,
 				18A059882670218D00D3A0A3 /* MovieEndpoint.swift */,
 				18BB17DE26763A1000E16EC3 /* Credits.swift */,
+				181437E526775B2800F8F902 /* Detail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,6 +321,7 @@
 			packageProductDependencies = (
 				18A0598E267021FE00D3A0A3 /* API */,
 				185338342671596C00A7C62F /* SDWebImage */,
+				181437EE2677A91400F8F902 /* NVActivityIndicatorView */,
 			);
 			productName = MovieApp;
 			productReference = 189EFE1426701A9100152FAF /* MovieApp.app */;
@@ -379,6 +396,7 @@
 			mainGroup = 189EFE0B26701A9100152FAF;
 			packageReferences = (
 				185338332671596C00A7C62F /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				181437ED2677A91400F8F902 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = 189EFE1526701A9100152FAF /* Products */;
 			projectDirPath = "";
@@ -436,6 +454,7 @@
 				189EFE1826701A9100152FAF /* AppDelegate.swift in Sources */,
 				18533841267178EF00A7C62F /* NowPlayingMovieCell.swift in Sources */,
 				18A05984267020BB00D3A0A3 /* Movie.swift in Sources */,
+				181437E626775B2800F8F902 /* Detail.swift in Sources */,
 				18BB17D9267634B200E16EC3 /* CastCrewCell.swift in Sources */,
 				185338232670FD8F00A7C62F /* TopRatedMovieCell.swift in Sources */,
 				1853381C2670E7D700A7C62F /* PopularMovieCell.swift in Sources */,
@@ -448,6 +467,7 @@
 				18B3F36E2672BBD100EAD18D /* MovieViewModel.swift in Sources */,
 				18BB17DF26763A1000E16EC3 /* Credits.swift in Sources */,
 				18A0597F267020A500D3A0A3 /* Response.swift in Sources */,
+				181437F52677A96900F8F902 /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +646,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A6TXNR8TL5;
 				INFOPLIST_FILE = MovieApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -645,6 +666,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A6TXNR8TL5;
 				INFOPLIST_FILE = MovieApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -782,6 +804,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		181437ED2677A91400F8F902 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 		185338332671596C00A7C62F /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -793,6 +823,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		181437EE2677A91400F8F902 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 181437ED2677A91400F8F902 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
 		185338342671596C00A7C62F /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 185338332671596C00A7C62F /* XCRemoteSwiftPackageReference "SDWebImage" */;

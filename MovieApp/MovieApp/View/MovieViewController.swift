@@ -78,27 +78,27 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == topRatedCollectionView {
-            if let movieID = viewModel.topRatedMovie(indexPath.item)?.movieId {
-                redirectTo(movieID: movieID)
-            } else {
+            guard let movieID = viewModel.topRatedMovie(indexPath.item)?.movieId else {
                 print("Başarız ID ")
+                return
             }
+            redirectTo(movieID: movieID)
         }
         
         if collectionView == popularCollectionView {
-            if let movieID = viewModel.popularMovie(indexPath.item)?.movieId {
-                redirectTo(movieID: movieID)
-            } else {
+            guard let movieID = viewModel.popularMovie(indexPath.item)?.movieId else {
                 print("Başarız ID ")
+                return
             }
+            redirectTo(movieID: movieID)
         }
 
         if collectionView == nowPlayingCollectionView {
-            if let movieID = viewModel.nowPlayingMovie(indexPath.item)?.movieId {
-                redirectTo(movieID: movieID)
-            } else {
+            guard let movieID = viewModel.nowPlayingMovie(indexPath.item)?.movieId else {
                 print("Başarız ID ")
+                return
             }
+            redirectTo(movieID: movieID)
         }
     }
 }

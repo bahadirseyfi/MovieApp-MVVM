@@ -18,6 +18,10 @@ final class NowPlayingMovieCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
+    }
+    
+    private func setupUI() {
         layer.cornerRadius = 15
         layer.borderWidth = 1
         layer.borderColor = .init(red: 0, green: 0, blue: 0, alpha: 1)

@@ -10,11 +10,15 @@ import SDWebImage
 
 final class TopRatedMovieCell: UICollectionViewCell {
 
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
+    }
+    
+    private func setupUI() {
         layer.cornerRadius = 8
     }
     

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUM-79-7Rm">
-                                <rect key="frame" x="0.0" y="88" width="414" height="829"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="777"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Waw-4y-9J6" userLabel="Container">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1250"/>
@@ -128,18 +128,18 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="750" constant="250" id="wh6-CQ-MzR"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="75C-D9-uR6">
-                                                    <size key="itemSize" width="180" height="224"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="75C-D9-uR6">
+                                                    <size key="itemSize" width="170" height="224"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="12" minY="8" maxX="12" maxY="8"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NowPlayingMovieCell" id="39J-dD-ybk" customClass="NowPlayingMovieCell" customModule="MovieApp" customModuleProvider="target">
-                                                        <rect key="frame" x="12" y="8" width="180" height="224"/>
+                                                        <rect key="frame" x="12" y="8" width="170" height="224"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="224"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="170" height="224"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5eC-v8-ZD5">
