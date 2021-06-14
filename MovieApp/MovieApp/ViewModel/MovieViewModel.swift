@@ -15,6 +15,8 @@ protocol MovieViewModelProtocol {
     func popularMovie(_ index: Int) -> Movie?
     func topRatedMovie(_ index: Int) -> Movie?
     func nowPlayingMovie(_ index: Int) -> Movie?
+    func showLoading()
+    func hideLoading()
 }
 
 protocol MovieViewModelDelegate: AnyObject {
@@ -37,9 +39,11 @@ final class MovieViewModel {
     }
     
     private func fetchTopRatedMovies() {
+        showLoading()
         networkManager.request(endpoint: .topRated, type: MoviesResponse.self) { [weak self] (result) in
             switch result {
             case .success(let response):
+                self?.hideLoading()
                 self?.topRatedMovies = response.results
                 self?.delegate?.reloadTopRated()
                 break
@@ -51,9 +55,11 @@ final class MovieViewModel {
     }
     
     private func fetchPopularMovies() {
+        showLoading()
         networkManager.request(endpoint: .popular, type: MoviesResponse.self) { [weak self] (result) in
             switch result {
             case .success(let response):
+                self?.hideLoading()
                 self?.popularMovies = response.results
                 self?.delegate?.reloadPopular()
                 break
@@ -65,9 +71,11 @@ final class MovieViewModel {
     }
     
     private func fetchNowPlayingMovies() {
+        showLoading()
         networkManager.request(endpoint: .nowPlaying, type: MoviesResponse.self) { [weak self] (result) in
             switch result {
             case .success(let response):
+                self?.hideLoading()
                 self?.nowPlayingMovies = response.results
                 self?.delegate?.reloadNowPlaying()
                 break
@@ -111,5 +119,13 @@ extension MovieViewModel: MovieViewModelProtocol {
         default:
             return 0
         }
+    }
+    
+    func showLoading() {
+        ProgressView.shared.show()
+    }
+    
+    func hideLoading() {
+        ProgressView.shared.hide()
     }
 }
