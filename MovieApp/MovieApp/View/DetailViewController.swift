@@ -17,6 +17,8 @@ final class DetailViewController: UIViewController {
     @IBOutlet private weak var languageLabel: UILabel!
     @IBOutlet private weak var popularityLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet weak var circle: UIView!
+    @IBOutlet weak var rateLabel: UILabel!
     
     var viewModel: DetailViewModelProtocol! {
         didSet {
@@ -56,6 +58,26 @@ final class DetailViewController: UIViewController {
                            }, completion: nil)
         }
     }
+    
+    private func circleFun(circle: UIView, percent: CGFloat) {
+        
+        circle.backgroundColor = UIColor.clear
+        circle.layer.cornerRadius = (circle.frame.size.width) / 2
+        
+        // bezier path
+        let circlePath = UIBezierPath(arcCenter: CGPoint (x: (circle.frame.size.width) / 2, y: circle.frame.size.height / 2), radius: (circle.frame.size.width) / 2,
+                                      startAngle: CGFloat(-0.5 * Double.pi),
+                                      endAngle: (CGFloat(-0.5) + percent / CGFloat(5) ) * CGFloat(Double.pi),
+                                      clockwise: true)
+        // circle shape
+        let circleShape = CAShapeLayer()
+        circleShape.path = circlePath.cgPath
+        circleShape.strokeColor = UIColor.cyan.cgColor
+        circleShape.fillColor = UIColor.clear.cgColor
+        circleShape.lineWidth = 1.7
+        // add sublayer
+        circle.layer.addSublayer(circleShape)
+    }
 }
 
 extension DetailViewController: DetailViewModelDelegate {
@@ -71,6 +93,8 @@ extension DetailViewController: DetailViewModelDelegate {
         genresLabel.text = viewModel.genres
         languageLabel.text = viewModel.language
         popularityLabel.text = viewModel.popularity
+        rateLabel.text = String(viewModel.voteAvarage)
+        circleFun(circle: circle, percent: CGFloat(viewModel.voteAvarage))
     }
     
     func prepareCollection() {
