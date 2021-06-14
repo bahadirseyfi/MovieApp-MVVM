@@ -60,12 +60,13 @@ final class DetailViewController: UIViewController {
     }
     
     private func circleFun(circle: UIView, percent: CGFloat) {
-        
         circle.backgroundColor = UIColor.clear
         circle.layer.cornerRadius = (circle.frame.size.width) / 2
         
         // bezier path
-        let circlePath = UIBezierPath(arcCenter: CGPoint (x: (circle.frame.size.width) / 2, y: circle.frame.size.height / 2), radius: (circle.frame.size.width) / 2,
+        let circlePath = UIBezierPath(arcCenter: CGPoint (x: (circle.frame.size.width) / 2,
+                                                          y: circle.frame.size.height / 2),
+                                      radius: (circle.frame.size.width) / 2,
                                       startAngle: CGFloat(-0.5 * Double.pi),
                                       endAngle: (CGFloat(-0.5) + percent / CGFloat(5) ) * CGFloat(Double.pi),
                                       clockwise: true)

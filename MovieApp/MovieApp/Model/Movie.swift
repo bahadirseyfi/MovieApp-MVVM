@@ -7,17 +7,7 @@
 
 import Foundation
 
-protocol MovieProtocol: Codable {
-    var movieId: Int { get set }
-    var title: String { get set }
-    var overview: String { get set }
-    var posterPath: String { get set }
-    var voteAverage: Double { get set }
-    var releaseDate: String { get set }
-    var backDropPath: String { get set }
-}
-
-struct Movie: MovieProtocol {
+struct Movie: Codable {
     var movieId: Int
     var title: String
     var overview: String
@@ -39,12 +29,3 @@ struct Movie: MovieProtocol {
     }
 }
 
-extension MovieProtocol {
-    func getPosterUrl() -> String {
-        return "\(MovieDBBaseAPI.BaseImagePath)\(posterPath)"
-    }
-    
-    func getBackDropURL() -> String {
-        return "\(MovieDBBaseAPI.BaseImagePath)\(backDropPath)"
-    }
-}
