@@ -14,7 +14,6 @@ public final class NetworkManager<EndpointItem: Endpoint> {
     private var possibleEmptyResponseCodes: Set<Int> {
         var defaultSet = DataResponseSerializer.defaultEmptyResponseCodes
         defaultSet.insert(200)
-        defaultSet.insert(201)
         return defaultSet
     }
     
